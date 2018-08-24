@@ -1,0 +1,32 @@
+{
+  "object": "value",
+  "document": {
+    "object": "document",
+    "data": {},
+    "nodes": [
+      {
+        "object": "block",
+        "type": "paragraph",
+        "isVoid": false,
+        "data": {},
+        "nodes": [
+          {
+            "object": "text",
+            "leaves": [
+              {
+                "object": "leaf",
+                "text": "This is an example of ",
+                "marks": []
+              },
+              {
+                "object": "leaf",
+                "text": "React Slate Custom Implementation",
+                "marks": [{ "object": "mark", "type": "bold", "data": {} }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
