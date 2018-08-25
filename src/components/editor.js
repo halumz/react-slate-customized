@@ -102,6 +102,7 @@ export default class extends Component {
   render() {
     return (
       <Editor
+        style={{ height: '90vh', overflowY: 'auto' }}
         spellCheck
         autoFocus
         placeholder="Enter some text..."
