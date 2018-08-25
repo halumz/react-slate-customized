@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Editor } from 'slate-react';
 import { Image } from './basic';
+import { plugin } from '../config';
 
 import {
-  DEFAULT_NODE,
   isBoldHotkey,
   isItalicHotkey,
   isUnderlinedHotkey,
-  isCodeHotkey,
-  isTabHotKey,
-  schema
+  isCodeHotkey
 } from '../config';
+
+const plugins = [plugin];
 
 export default class extends Component {
   hasBlock = type => {
@@ -18,8 +18,10 @@ export default class extends Component {
     return value.blocks.some(node => node.type === type);
   };
   renderNode = props => {
-    const { attributes, children, node, isFocused } = props;
-
+    const { attributes, children, node, isFocused, editor } = props;
+    const isCurrentItem = plugin.utils
+      .getItemsAtRange(editor.value)
+      .contains(node);
     switch (node.type) {
       case 'block-quote':
         return <blockquote {...attributes}>{children}</blockquote>;
@@ -29,8 +31,24 @@ export default class extends Component {
         return <h1 {...attributes}>{children}</h1>;
       case 'heading-two':
         return <h2 {...attributes}>{children}</h2>;
-      case 'list-item':
-        return <li {...attributes}>{children}</li>;
+      // case 'list-item':
+      //   return <li {...attributes}>{children}</li>;
+      case 'ul_list':
+        return <ul {...attributes}>{children}</ul>;
+      case 'ol_list':
+        return <ol {...attributes}>{children}</ol>;
+
+      case 'list_item':
+        return (
+          <li
+            className={isCurrentItem ? 'current-item' : ''}
+            title={isCurrentItem ? 'Current Item' : ''}
+            {...props.attributes}
+          >
+            {props.children}
+          </li>
+        );
+
       case 'numbered-list':
         return <ol {...attributes}>{children}</ol>;
       case 'image': {
@@ -62,7 +80,7 @@ export default class extends Component {
     this.props.changeValue(value);
   };
 
-  onKeyDown = (event, change) => {
+  onKeyDown = (event, change, editor: *) => {
     let mark;
 
     if (isBoldHotkey(event)) {
@@ -73,10 +91,6 @@ export default class extends Component {
       mark = 'underlined';
     } else if (isCodeHotkey(event)) {
       mark = 'code';
-    } else if (isTabHotKey(event)) {
-      console.log(12, event.shiftKey, change);
-      event.preventDefault();
-      return;
     } else {
       return;
     }
@@ -84,58 +98,6 @@ export default class extends Component {
     event.preventDefault();
     change.toggleMark(mark);
     return true;
-  };
-
-  onClickMark = (event, type) => {
-    event.preventDefault();
-    const { value } = this.props;
-    const change = value.change().toggleMark(type);
-    this.onChange(change);
-  };
-
-  onClickBlock = (event, type) => {
-    event.preventDefault();
-    const { value } = this.props;
-    const change = value.change();
-    const { document } = value;
-
-    // Handle everything but list buttons.
-    if (type !== 'bulleted-list' && type !== 'numbered-list') {
-      const isActive = this.hasBlock(type);
-      const isList = this.hasBlock('list-item');
-
-      if (isList) {
-        change
-          .setBlocks(isActive ? DEFAULT_NODE : type)
-          .unwrapBlock('bulleted-list')
-          .unwrapBlock('numbered-list');
-      } else {
-        change.setBlocks(isActive ? DEFAULT_NODE : type);
-      }
-    } else {
-      // Handle the extra wrapping required for list buttons.
-      const isList = this.hasBlock('list-item');
-      const isType = value.blocks.some(block => {
-        return !!document.getClosest(block.key, parent => parent.type === type);
-      });
-
-      if (isList && isType) {
-        change
-          .setBlocks(DEFAULT_NODE)
-          .unwrapBlock('bulleted-list')
-          .unwrapBlock('numbered-list');
-      } else if (isList) {
-        change
-          .unwrapBlock(
-            type === 'bulleted-list' ? 'numbered-list' : 'bulleted-list'
-          )
-          .wrapBlock(type);
-      } else {
-        change.setBlocks('list-item').wrapBlock(type);
-      }
-    }
-
-    this.onChange(change);
   };
   render() {
     return (
@@ -148,8 +110,12 @@ export default class extends Component {
         onKeyDown={this.onKeyDown}
         renderNode={this.renderNode}
         renderMark={this.renderMark}
-        schema={schema}
         onDrop={this.onDropImage}
+        plugins={plugins}
+        shouldNodeComponentUpdate={props =>
+          // To update the highlighting of nodes inside the selection
+          props.node.type === 'list_item'
+        }
       />
     );
   }

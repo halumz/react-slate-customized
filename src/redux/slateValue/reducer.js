@@ -18,6 +18,12 @@ export default function todoReducer(state = initState, { type, payload }) {
   switch (type) {
     case actions.CHANGE_VALUE:
       return { ...state, value: payload.value };
+    case actions.ON_SAVE:
+      localStorage.setItem(DEFAULT_STORAGE_KEY, JSON.stringify(state.value));
+      return state;
+    case actions.ON_CANCEL:
+      localStorage.setItem(DEFAULT_STORAGE_KEY, JSON.stringify(initialValue));
+      return { ...state, value: Value.fromJSON(initialValue) };
     default:
       return state;
   }

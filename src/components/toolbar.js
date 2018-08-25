@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import { Button, Icon, Toolbar } from './basic';
+import { DEFAULT_NODE, plugin } from '../config';
 
 const insertImage = (change, src, target) => {
   if (target) {
@@ -27,7 +28,6 @@ export default class extends Component {
   };
   renderBlockButton = (type, icon) => {
     let isActive = this.hasBlock(type);
-
     if (['numbered-list', 'bulleted-list'].includes(type)) {
       const { value } = this.props;
       const parent = value.document.getParent(value.blocks.first().key);
@@ -38,6 +38,22 @@ export default class extends Component {
       <Button
         active={isActive}
         onMouseDown={event => this.onClickBlock(event, type)}
+      >
+        <Icon>{icon}</Icon>
+      </Button>
+    );
+  };
+  renderListButton = (type, icon) => {
+    const { wrapInList, unwrapList } = plugin.changes;
+    const inList = plugin.utils.isSelectionInList(this.props.value);
+    const call = change => {
+      this.props.changeValue(this.props.value.change().call(change).value);
+    };
+
+    return (
+      <Button
+        active={inList}
+        onMouseDown={() => call(inList ? unwrapList : wrapInList)}
       >
         <Icon>{icon}</Icon>
       </Button>
@@ -56,25 +72,54 @@ export default class extends Component {
     const src = window.prompt('Enter the URL of the image:');
     if (!src) return;
     const change = this.props.value.change().call(insertImage, src);
-    this.onChange(change);
+    this.props.changeValue(change.value);
   };
   onDropImage = acceptedFiles => {
     acceptedFiles.forEach(file => {
       const change = this.props.value.change().call(insertImage, file.preview);
-      this.onChange(change);
+      this.props.changeValue(change.value);
     });
   };
-  onSave = () => {
-    // console.log(this.props.value, this.props.value.toJSON());
-    // localStorage.setItem(DEFAULT_STORAGE_KEY, JSON.stringify(this.props.value));
+  onClickMark = (event, type) => {
+    event.preventDefault();
+    const { value } = this.props;
+    const change = value.change().toggleMark(type);
+    this.props.changeValue(change.value);
   };
-  onCancel = () => {
-    // localStorage.setItem(DEFAULT_STORAGE_KEY, JSON.stringify(initialValue));
-    // this.setState({ value: Value.fromJSON(initialValue) });
+
+  onClickBlock = (event, type) => {
+    event.preventDefault();
+
+    const { value } = this.props;
+    const change = value.change();
+
+    // Handle everything but list buttons.
+    if (type !== 'bulleted-list' && type !== 'numbered-list') {
+      const isActive = this.hasBlock(type);
+      const isList = this.hasBlock('list-item');
+
+      if (isList) {
+        change
+          .setBlocks(isActive ? DEFAULT_NODE : type)
+          .unwrapBlock('bulleted-list')
+          .unwrapBlock('numbered-list');
+      } else {
+        change.setBlocks(isActive ? DEFAULT_NODE : type);
+      }
+    }
+    this.props.changeValue(change.value);
   };
+
   render() {
     return (
-      <Toolbar style={{ background: '#1A1A1A' }}>
+      <Toolbar
+        style={{
+          background: '#1A1A1A',
+          display: 'flex',
+          padding: 10,
+          justifyContent: 'center'
+        }}
+      >
         {this.renderMarkButton('bold', 'format_bold')}
         {this.renderMarkButton('italic', 'format_italic')}
         {this.renderMarkButton('underlined', 'format_underlined')}
@@ -82,21 +127,20 @@ export default class extends Component {
         {this.renderBlockButton('heading-one', 'looks_one')}
         {this.renderBlockButton('heading-two', 'looks_two')}
         {this.renderBlockButton('block-quote', 'format_quote')}
-        {this.renderBlockButton('numbered-list', 'format_list_numbered')}
-        {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
-        <Button onMouseDown={this.onClickImage}>image_link</Button>
+        {this.renderListButton('bulleted-list', 'format_list_bulleted')}
+        <Button onMouseDown={this.onClickImage}>image link</Button>
 
         <Dropzone
           onDrop={this.onDropImage}
           style={{ height: '100%', borderWidth: 0 }}
           accept="image/jpeg, image/png"
         >
-          <Button>image_upload</Button>
+          <Button>image upload</Button>
         </Dropzone>
-        <Button style={{ color: '#00ff00' }} onClick={this.onSave}>
+        <Button style={{ color: '#00ff00' }} onClick={this.props.onSave}>
           Save
         </Button>
-        <Button style={{ color: '#ff0000' }} onClick={this.onCancel}>
+        <Button style={{ color: '#ff0000' }} onClick={this.props.onCancel}>
           Cancel
         </Button>
       </Toolbar>

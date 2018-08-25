@@ -1,6 +1,8 @@
 import { isKeyHotkey } from 'is-hotkey';
 import { Block } from 'slate';
 import { LAST_CHILD_TYPE_INVALID } from 'slate-schema-violations';
+// import PluginEditList from './lib';
+import EditList from 'slate-edit-list';
 
 const DEFAULT_STORAGE_KEY = 'CustomizedSlate';
 const DEFAULT_NODE = 'paragraph';
@@ -25,6 +27,7 @@ const schema = {
     }
   }
 };
+const plugin = EditList();
 
 export {
   DEFAULT_STORAGE_KEY,
@@ -34,5 +37,6 @@ export {
   isUnderlinedHotkey,
   isCodeHotkey,
   isTabHotKey,
-  schema
+  schema,
+  plugin
 };
