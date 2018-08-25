@@ -3,12 +3,13 @@
 [![NPM version](https://badge.fury.io/js/slate-edit-list.svg)](http://badge.fury.io/js/slate-edit-list)
 [![Linux Build Status](https://travis-ci.org/GitbookIO/slate-edit-list.png?branch=master)](https://travis-ci.org/GitbookIO/slate-edit-list)
 
-A Slate example to improvise the editor.
+A Slate example to improvise the editor using [react](https://github.com/facebook/create-react-app) and [Slate](https://www.slatejs.org/#/rich-text)
+
 [Demo Link](https://halumz.github.io/react-slate-customized)
 
 ## Features
 
-An enhanced standard rich text using [Slack](https://www.slatejs.org/#/rich-text)
+An enhanced standard rich text using [Slate](https://www.slatejs.org/#/rich-text)
 
 * Images:
 
@@ -25,5 +26,5 @@ An enhanced standard rich text using [Slack](https://www.slatejs.org/#/rich-text
   * Pressing <kbd>Delete</kbd> (OSX) or <kbd>Backspace</kbd> at the start, remove the list item (or the list)
 
 * Save/Cancel functionality
-  * Save - stores new new editor content in localstorage
-  * Cancel - restores to the old saved content from localstorage
+  * Save - stores new editor content in `localstorage` included image path
+  * Cancel - restores to the old saved content from `localstorage`
