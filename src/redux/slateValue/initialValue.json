@@ -6,7 +6,7 @@
     "nodes": [
       {
         "object": "block",
-        "type": "paragraph",
+        "type": "heading-one",
         "isVoid": false,
         "data": {},
         "nodes": [
@@ -15,13 +15,703 @@
             "leaves": [
               {
                 "object": "leaf",
-                "text": "This is an example of ",
+                "text": "    react-slate-customized",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "list-item",
+        "isVoid": false,
+        "data": {},
+        "nodes": [
+          {
+            "object": "text",
+            "leaves": [
+              {
+                "object": "leaf",
+                "text": "       A Slate example to improvise the editor using ",
                 "marks": []
               },
               {
                 "object": "leaf",
-                "text": "React Slate Custom Implementation",
+                "text": "react",
                 "marks": [{ "object": "mark", "type": "bold", "data": {} }]
+              },
+              { "object": "leaf", "text": " and ", "marks": [] },
+              {
+                "object": "leaf",
+                "text": "Slate",
+                "marks": [{ "object": "mark", "type": "bold", "data": {} }]
+              },
+              { "object": "leaf", "text": ".", "marks": [] }
+            ]
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "bulleted-list",
+        "isVoid": false,
+        "data": {},
+        "nodes": [
+          {
+            "object": "block",
+            "type": "list-item",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "text",
+                "leaves": [{ "object": "leaf", "text": "", "marks": [] }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "heading-two",
+        "isVoid": false,
+        "data": {},
+        "nodes": [
+          {
+            "object": "text",
+            "leaves": [
+              { "object": "leaf", "text": "      Features", "marks": [] }
+            ]
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "bulleted-list",
+        "isVoid": false,
+        "data": {},
+        "nodes": [
+          {
+            "object": "block",
+            "type": "ul_list",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "text",
+                        "leaves": [
+                          { "object": "leaf", "text": "Images", "marks": [] }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "object": "block",
+                    "type": "ul_list",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text": "Image linking from url",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "text",
+                        "leaves": [
+                          { "object": "leaf", "text": "", "marks": [] }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "object": "block",
+                    "type": "image",
+                    "isVoid": true,
+                    "data": {
+                      "src": "https://cdn.worldvectorlogo.com/logos/react.svg"
+                    },
+                    "nodes": [
+                      {
+                        "object": "text",
+                        "leaves": [
+                          { "object": "leaf", "text": "", "marks": [] }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "object": "block",
+                    "type": "ul_list",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text":
+                                      "Image upload with button drop desktop using ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "dropzone",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "bold",
+                                        "data": {}
+                                      },
+                                      {
+                                        "object": "mark",
+                                        "type": "italic",
+                                        "data": {}
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "object": "block",
+            "type": "list-item",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "text",
+                "leaves": [{ "object": "leaf", "text": "", "marks": [] }]
+              }
+            ]
+          },
+          {
+            "object": "block",
+            "type": "ul_list",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "text",
+                        "leaves": [
+                          { "object": "leaf", "text": "Lists:", "marks": [] }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "object": "block",
+                    "type": "ul_list",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text":
+                                      "Ordered and unordered lists with tab support using ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "slate-edit-list",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "italic",
+                                        "data": {}
+                                      },
+                                      {
+                                        "object": "mark",
+                                        "type": "bold",
+                                        "data": {}
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text": "Pressing ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "Enter",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "code",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": " insert a new list item",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text": "Pressing ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "Shift+Enter",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "code",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": " split the block in the list item",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text": "Pressing ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "Tab",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "code",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text":
+                                      " increase the depth of the item (creates a sub-list)",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text": "Pressing ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "Shift+Tab",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "code",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": " decrease the depth of the item",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text": "Pressing ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "Delete",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "code",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": " (OSX) or ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "Backspace",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "code",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text":
+                                      " at the start, remove the list item (or the list)",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "object": "block",
+            "type": "list-item",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "text",
+                "leaves": [{ "object": "leaf", "text": "", "marks": [] }]
+              }
+            ]
+          },
+          {
+            "object": "block",
+            "type": "ul_list",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "text",
+                        "leaves": [
+                          {
+                            "object": "leaf",
+                            "text": "Save/Cancel functionality",
+                            "marks": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "object": "block",
+                    "type": "ul_list",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text":
+                                      "Save - stores new editor content in ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "localstorage",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "italic",
+                                        "data": {}
+                                      },
+                                      {
+                                        "object": "mark",
+                                        "type": "bold",
+                                        "data": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": " included image path",
+                                    "marks": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "object": "block",
+                        "type": "list_item",
+                        "isVoid": false,
+                        "data": {},
+                        "nodes": [
+                          {
+                            "object": "block",
+                            "type": "list-item",
+                            "isVoid": false,
+                            "data": {},
+                            "nodes": [
+                              {
+                                "object": "text",
+                                "leaves": [
+                                  {
+                                    "object": "leaf",
+                                    "text":
+                                      "Cancel - restores to the old saved content from ",
+                                    "marks": []
+                                  },
+                                  {
+                                    "object": "leaf",
+                                    "text": "localstorage",
+                                    "marks": [
+                                      {
+                                        "object": "mark",
+                                        "type": "italic",
+                                        "data": {}
+                                      },
+                                      {
+                                        "object": "mark",
+                                        "type": "bold",
+                                        "data": {}
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "object": "block",
+            "type": "list-item",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "text",
+                "leaves": [{ "object": "leaf", "text": "", "marks": [] }]
               }
             ]
           }

@@ -4,6 +4,7 @@ import initValue from './initialValue';
 import { DEFAULT_STORAGE_KEY } from '../../config';
 
 let initialValue = localStorage.getItem(DEFAULT_STORAGE_KEY);
+console.log(initialValue);
 if (!initialValue) {
   initialValue = initValue;
 } else {

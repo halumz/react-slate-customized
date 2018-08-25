@@ -13,12 +13,12 @@ export default class extends Component {
           height="80"
           viewBox="0 0 250 250"
           style={{
-            fill: '#000',
-            color: '#1abc9c',
+            fill: '#1abc9c',
+            color: '#fff',
             position: 'absolute',
             top: 0,
             border: 0,
-            right: -20
+            right: 0
           }}
           aria-hidden="true"
         >

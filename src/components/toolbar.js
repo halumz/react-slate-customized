@@ -117,7 +117,8 @@ export default class extends Component {
           background: '#1A1A1A',
           display: 'flex',
           padding: 10,
-          justifyContent: 'center'
+          justifyContent: 'center',
+          maxWidth: '100vw'
         }}
       >
         {this.renderMarkButton('bold', 'format_bold')}

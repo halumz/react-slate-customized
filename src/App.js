@@ -8,7 +8,7 @@ import actions from './redux/slateValue/actions.js';
 class CustomizedSlate extends Component {
   render() {
     return (
-      <div>
+      <div style={{ maxWidth: '100vw' }}>
         <Toolbar {...this.props} />
         <Editor {...this.props} />
         <Fork />

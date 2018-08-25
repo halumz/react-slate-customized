@@ -13,7 +13,7 @@ An enhanced standard rich text using [Slate](https://www.slatejs.org/#/rich-text
 
 * Images:
 
-  * Image linking fron url
+  * Image linking from url
   * Image upload with button drop desktop using [dropzone](https://github.com/enyo/dropzone)
 
 * Lists:
