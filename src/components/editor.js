@@ -18,25 +18,55 @@ export default class extends Component {
     return value.blocks.some(node => node.type === type);
   };
   renderNode = props => {
+    const { maxLimitKeys } = this.props;
     const { attributes, children, node, isFocused, editor } = props;
+    const style = {};
     const isCurrentItem = plugin.utils
       .getItemsAtRange(editor.value)
       .contains(node);
+
+    if (maxLimitKeys.findIndex(key => key === node.key) !== -1) {
+      style.color = 'gray';
+    }
     switch (node.type) {
       case 'block-quote':
-        return <blockquote {...attributes}>{children}</blockquote>;
+        return (
+          <blockquote {...attributes} style={style}>
+            {children}
+          </blockquote>
+        );
       case 'bulleted-list':
-        return <ul {...attributes}>{children}</ul>;
+        return (
+          <ul {...attributes} style={style}>
+            {children}
+          </ul>
+        );
       case 'heading-one':
-        return <h1 {...attributes}>{children}</h1>;
+        return (
+          <h1 {...attributes} style={style}>
+            {children}
+          </h1>
+        );
       case 'heading-two':
-        return <h2 {...attributes}>{children}</h2>;
+        return (
+          <h2 {...attributes} style={style}>
+            {children}
+          </h2>
+        );
       // case 'list-item':
-      //   return <li {...attributes}>{children}</li>;
+      //   return <li {...attributes} style={style}>{children}</li>;
       case 'ul_list':
-        return <ul {...attributes}>{children}</ul>;
+        return (
+          <ul {...attributes} style={style}>
+            {children}
+          </ul>
+        );
       case 'ol_list':
-        return <ol {...attributes}>{children}</ol>;
+        return (
+          <ol {...attributes} style={style}>
+            {children}
+          </ol>
+        );
 
       case 'list_item':
         return (
@@ -44,19 +74,26 @@ export default class extends Component {
             className={isCurrentItem ? 'current-item' : ''}
             title={isCurrentItem ? 'Current Item' : ''}
             {...props.attributes}
+            style={style}
           >
             {props.children}
           </li>
         );
 
       case 'numbered-list':
-        return <ol {...attributes}>{children}</ol>;
+        return (
+          <ol {...attributes} style={style}>
+            {children}
+          </ol>
+        );
       case 'image': {
         const src = node.data.get('src');
-        return <Image src={src} selected={isFocused} {...attributes} />;
+        return (
+          <Image src={src} selected={isFocused} {...attributes} style={style} />
+        );
       }
       default:
-        return null;
+        return <div style={style}>{children}</div>;
     }
   };
 
