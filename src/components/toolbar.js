@@ -60,6 +60,7 @@ export default class extends Component {
         value.document.getParent(value.blocks.first().key);
       isActive = this.hasBlock('list-item') && parent && parent.type === type;
     }
+    window.localType = type;
     const call = change => {
       this.props.changeValue(this.props.value.change().call(change).value);
     };

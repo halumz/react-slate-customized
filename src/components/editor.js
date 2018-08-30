@@ -28,6 +28,7 @@ export default class extends Component {
     if (maxLimitKeys.findIndex(key => key === node.key) !== -1) {
       style.color = 'gray';
     }
+    console.log(node.type);
     switch (node.type) {
       case 'block-quote':
         return (
