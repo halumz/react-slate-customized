@@ -62,9 +62,8 @@ function moveAsSubItem(
     );
   }
   const currentList = getListForItem(opts, change.value, destination);
-  console.log(currentList.type);
   if (!currentList) {
-    throw new Error('Destination is not in a list');
+    return;
   }
   const newSublist = Block.create({
     object: 'block',

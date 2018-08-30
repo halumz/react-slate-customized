@@ -48,27 +48,21 @@ export default class extends Component {
   };
   renderListButton = (type, icon) => {
     const { wrapInList, unwrapList } = plugin.changes;
-    const inList = plugin.utils.isSelectionInList(this.props.value);
-    // const inList = plugin.utils.isSelectionInList(this.props.value);
-    let isActive = false;
-    if (['numbered-list'].includes(type)) {
-      const { value } = this.props;
-
-      const parent =
-        value.blocks &&
-        value.blocks.first() &&
-        value.document.getParent(value.blocks.first().key);
-      isActive = this.hasBlock('list-item') && parent && parent.type === type;
-    }
-    window.localType = type;
+    const currentList = plugin.utils.getCurrentList(this.props.value);
+    let inList = plugin.utils.isSelectionInList(this.props.value);
+    const isNumber = currentList && currentList.toJS().type === 'numbered-list';
+    const isActive = type === 'numbered-list' ? isNumber : inList && !isNumber;
     const call = change => {
-      this.props.changeValue(this.props.value.change().call(change).value);
+      window.localType = type === 'numbered-list' && 'numbered-list';
+      const value = this.props.value.change().call(unwrapList).value;
+      // this.props.changeValue(this.props.value.change().call(unwrapList).value);
+      this.props.changeValue(value.change().call(change).value);
     };
 
     return (
       <Button
-        active={type === 'numbered-list' ? inList && isActive : inList}
-        onMouseDown={() => call(inList ? unwrapList : wrapInList)}
+        active={isActive}
+        onMouseDown={() => call(isActive ? unwrapList : wrapInList)}
       >
         <Icon>{icon}</Icon>
       </Button>
@@ -120,17 +114,6 @@ export default class extends Component {
           .unwrapBlock('numbered-list');
       } else {
         change.setBlocks(isActive ? DEFAULT_NODE : type);
-      }
-    } else {
-      // Handle the extra wrapping required for numbered list buttons.
-      const isList = this.hasBlock('list-item');
-      if (isList) {
-        change
-          .setBlocks(DEFAULT_NODE)
-          .unwrapBlock('bulleted-list')
-          .unwrapBlock('numbered-list');
-      } else {
-        change.setBlocks('list-item').wrapBlock('numbered-list');
       }
     }
     this.props.changeValue(change.value);

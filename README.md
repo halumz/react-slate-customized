@@ -29,3 +29,5 @@ An enhanced standard rich text using [Slate](https://www.slatejs.org/#/rich-text
   * Save - stores new editor content in `localstorage` included image path
   * Cancel - restores to the old saved content from `localstorage`
 * Number of top-level block is restricted in [config->MAX_LENGTH](https://github.com/halumz/react-slate-customized/blob/master/src/config.js#L8) file
+
+* Number of maximum tab count is restricted in [config->MAX_TAB_COUNT](https://github.com/halumz/react-slate-customized/blob/master/src/config.js#L9) file

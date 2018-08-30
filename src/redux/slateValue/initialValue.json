@@ -274,281 +274,253 @@
                         ]
                       }
                     ]
-                  },
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "object": "block",
+            "type": "numbered-list",
+            "isVoid": false,
+            "data": {},
+            "nodes": [
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
                   {
                     "object": "block",
-                    "type": "ul_list",
+                    "type": "list-item",
                     "isVoid": false,
                     "data": {},
                     "nodes": [
                       {
-                        "object": "block",
-                        "type": "list_item",
-                        "isVoid": false,
-                        "data": {},
-                        "nodes": [
+                        "object": "text",
+                        "leaves": [
                           {
-                            "object": "block",
-                            "type": "list-item",
-                            "isVoid": false,
-                            "data": {},
-                            "nodes": [
+                            "object": "leaf",
+                            "text":
+                              "Ordered and unordered lists with tab support using ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "slate-edit-list",
+                            "marks": [
                               {
-                                "object": "text",
-                                "leaves": [
-                                  {
-                                    "object": "leaf",
-                                    "text":
-                                      "Ordered and unordered lists with tab support using ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "slate-edit-list",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "italic",
-                                        "data": {}
-                                      },
-                                      {
-                                        "object": "mark",
-                                        "type": "bold",
-                                        "data": {}
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
+                                "object": "mark",
+                                "type": "italic",
+                                "data": {}
+                              },
+                              { "object": "mark", "type": "bold", "data": {} }
                             ]
                           }
                         ]
-                      },
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
                       {
-                        "object": "block",
-                        "type": "list_item",
-                        "isVoid": false,
-                        "data": {},
-                        "nodes": [
+                        "object": "text",
+                        "leaves": [
                           {
-                            "object": "block",
-                            "type": "list-item",
-                            "isVoid": false,
-                            "data": {},
-                            "nodes": [
-                              {
-                                "object": "text",
-                                "leaves": [
-                                  {
-                                    "object": "leaf",
-                                    "text": "Pressing ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "Enter",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "code",
-                                        "data": {}
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": " insert a new list item",
-                                    "marks": []
-                                  }
-                                ]
-                              }
+                            "object": "leaf",
+                            "text": "Pressing ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "Enter",
+                            "marks": [
+                              { "object": "mark", "type": "code", "data": {} }
                             ]
+                          },
+                          {
+                            "object": "leaf",
+                            "text": " insert a new list item",
+                            "marks": []
                           }
                         ]
-                      },
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
                       {
-                        "object": "block",
-                        "type": "list_item",
-                        "isVoid": false,
-                        "data": {},
-                        "nodes": [
+                        "object": "text",
+                        "leaves": [
                           {
-                            "object": "block",
-                            "type": "list-item",
-                            "isVoid": false,
-                            "data": {},
-                            "nodes": [
-                              {
-                                "object": "text",
-                                "leaves": [
-                                  {
-                                    "object": "leaf",
-                                    "text": "Pressing ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "Shift+Enter",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "code",
-                                        "data": {}
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": " split the block in the list item",
-                                    "marks": []
-                                  }
-                                ]
-                              }
+                            "object": "leaf",
+                            "text": "Pressing ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "Shift+Enter",
+                            "marks": [
+                              { "object": "mark", "type": "code", "data": {} }
                             ]
+                          },
+                          {
+                            "object": "leaf",
+                            "text": " split the block in the list item",
+                            "marks": []
                           }
                         ]
-                      },
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
                       {
-                        "object": "block",
-                        "type": "list_item",
-                        "isVoid": false,
-                        "data": {},
-                        "nodes": [
+                        "object": "text",
+                        "leaves": [
                           {
-                            "object": "block",
-                            "type": "list-item",
-                            "isVoid": false,
-                            "data": {},
-                            "nodes": [
-                              {
-                                "object": "text",
-                                "leaves": [
-                                  {
-                                    "object": "leaf",
-                                    "text": "Pressing ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "Tab",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "code",
-                                        "data": {}
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text":
-                                      " increase the depth of the item (creates a sub-list)",
-                                    "marks": []
-                                  }
-                                ]
-                              }
+                            "object": "leaf",
+                            "text": "Pressing ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "Tab",
+                            "marks": [
+                              { "object": "mark", "type": "code", "data": {} }
                             ]
+                          },
+                          {
+                            "object": "leaf",
+                            "text":
+                              " increase the depth of the item (creates a sub-list)",
+                            "marks": []
                           }
                         ]
-                      },
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
                       {
-                        "object": "block",
-                        "type": "list_item",
-                        "isVoid": false,
-                        "data": {},
-                        "nodes": [
+                        "object": "text",
+                        "leaves": [
                           {
-                            "object": "block",
-                            "type": "list-item",
-                            "isVoid": false,
-                            "data": {},
-                            "nodes": [
-                              {
-                                "object": "text",
-                                "leaves": [
-                                  {
-                                    "object": "leaf",
-                                    "text": "Pressing ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "Shift+Tab",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "code",
-                                        "data": {}
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": " decrease the depth of the item",
-                                    "marks": []
-                                  }
-                                ]
-                              }
+                            "object": "leaf",
+                            "text": "Pressing ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "Shift+Tab",
+                            "marks": [
+                              { "object": "mark", "type": "code", "data": {} }
                             ]
+                          },
+                          {
+                            "object": "leaf",
+                            "text": " decrease the depth of the item",
+                            "marks": []
                           }
                         ]
-                      },
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "object": "block",
+                "type": "list_item",
+                "isVoid": false,
+                "data": {},
+                "nodes": [
+                  {
+                    "object": "block",
+                    "type": "list-item",
+                    "isVoid": false,
+                    "data": {},
+                    "nodes": [
                       {
-                        "object": "block",
-                        "type": "list_item",
-                        "isVoid": false,
-                        "data": {},
-                        "nodes": [
+                        "object": "text",
+                        "leaves": [
                           {
-                            "object": "block",
-                            "type": "list-item",
-                            "isVoid": false,
-                            "data": {},
-                            "nodes": [
-                              {
-                                "object": "text",
-                                "leaves": [
-                                  {
-                                    "object": "leaf",
-                                    "text": "Pressing ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "Delete",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "code",
-                                        "data": {}
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": " (OSX) or ",
-                                    "marks": []
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text": "Backspace",
-                                    "marks": [
-                                      {
-                                        "object": "mark",
-                                        "type": "code",
-                                        "data": {}
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "object": "leaf",
-                                    "text":
-                                      " at the start, remove the list item (or the list)",
-                                    "marks": []
-                                  }
-                                ]
-                              }
+                            "object": "leaf",
+                            "text": "Pressing ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "Delete",
+                            "marks": [
+                              { "object": "mark", "type": "code", "data": {} }
                             ]
+                          },
+                          {
+                            "object": "leaf",
+                            "text": " (OSX) or ",
+                            "marks": []
+                          },
+                          {
+                            "object": "leaf",
+                            "text": "Backspace",
+                            "marks": [
+                              { "object": "mark", "type": "code", "data": {} }
+                            ]
+                          },
+                          {
+                            "object": "leaf",
+                            "text":
+                              " at the start, remove the list item (or the list)",
+                            "marks": []
                           }
                         ]
                       }

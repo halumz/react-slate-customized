@@ -8,7 +8,7 @@ import getItemsAtRange from './getItemsAtRange';
  * True if selection is inside a list (and can be unwrapped)
  */
 function isSelectionInList(opts: Options, value: Value): boolean {
-    return !getItemsAtRange(opts, value).isEmpty();
+  return !getItemsAtRange(opts, value).isEmpty();
 }
 
 export default isSelectionInList;

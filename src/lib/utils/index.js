@@ -8,12 +8,12 @@ import isList from './isList';
 import isSelectionInList from './isSelectionInList';
 
 export {
-    getCurrentItem,
-    getCurrentList,
-    getItemDepth,
-    getItemsAtRange,
-    getListForItem,
-    getPreviousItem,
-    isList,
-    isSelectionInList
+  getCurrentItem,
+  getCurrentList,
+  getItemDepth,
+  getItemsAtRange,
+  getListForItem,
+  getPreviousItem,
+  isList,
+  isSelectionInList
 };
