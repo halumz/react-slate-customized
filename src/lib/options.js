@@ -13,7 +13,7 @@ export type OptionsFormat = {
  * The plugin options
  */
 class Options extends Record({
-  types: ['ul_list'],
+  types: ['ul_list', 'ol_list'],
   typeItem: 'list_item',
   typeDefault: 'paragraph',
   canMerge: (a: Node, b: Node) => a.type === b.type
