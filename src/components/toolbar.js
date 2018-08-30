@@ -28,12 +28,15 @@ export default class extends Component {
   };
   renderBlockButton = (type, icon) => {
     let isActive = this.hasBlock(type);
-    if (['numbered-list', 'bulleted-list'].includes(type)) {
+    if (['numbered-list'].includes(type)) {
       const { value } = this.props;
-      const parent = value.document.getParent(value.blocks.first().key);
+
+      const parent =
+        value.blocks &&
+        value.blocks.first() &&
+        value.document.getParent(value.blocks.first().key);
       isActive = this.hasBlock('list-item') && parent && parent.type === type;
     }
-
     return (
       <Button
         active={isActive}
@@ -46,13 +49,24 @@ export default class extends Component {
   renderListButton = (type, icon) => {
     const { wrapInList, unwrapList } = plugin.changes;
     const inList = plugin.utils.isSelectionInList(this.props.value);
+    // const inList = plugin.utils.isSelectionInList(this.props.value);
+    let isActive = false;
+    if (['numbered-list'].includes(type)) {
+      const { value } = this.props;
+
+      const parent =
+        value.blocks &&
+        value.blocks.first() &&
+        value.document.getParent(value.blocks.first().key);
+      isActive = this.hasBlock('list-item') && parent && parent.type === type;
+    }
     const call = change => {
       this.props.changeValue(this.props.value.change().call(change).value);
     };
 
     return (
       <Button
-        active={inList}
+        active={type === 'numbered-list' ? inList && isActive : inList}
         onMouseDown={() => call(inList ? unwrapList : wrapInList)}
       >
         <Icon>{icon}</Icon>
@@ -94,7 +108,7 @@ export default class extends Component {
     const change = value.change();
 
     // Handle everything but list buttons.
-    if (type !== 'bulleted-list' && type !== 'numbered-list') {
+    if (type !== 'numbered-list') {
       const isActive = this.hasBlock(type);
       const isList = this.hasBlock('list-item');
 
@@ -105,6 +119,17 @@ export default class extends Component {
           .unwrapBlock('numbered-list');
       } else {
         change.setBlocks(isActive ? DEFAULT_NODE : type);
+      }
+    } else {
+      // Handle the extra wrapping required for numbered list buttons.
+      const isList = this.hasBlock('list-item');
+      if (isList) {
+        change
+          .setBlocks(DEFAULT_NODE)
+          .unwrapBlock('bulleted-list')
+          .unwrapBlock('numbered-list');
+      } else {
+        change.setBlocks('list-item').wrapBlock('numbered-list');
       }
     }
     this.props.changeValue(change.value);
@@ -130,6 +155,7 @@ export default class extends Component {
         {this.renderBlockButton('heading-two', 'looks_two')}
         {this.renderBlockButton('block-quote', 'format_quote')}
         {this.renderListButton('bulleted-list', 'format_list_bulleted')}
+        {this.renderListButton('numbered-list', 'format_list_numbered')}
         <Button onMouseDown={this.onClickImage}>image link</Button>
 
         <Dropzone

@@ -6,6 +6,7 @@ import PluginEditList from './lib';
 const DEFAULT_STORAGE_KEY = 'CustomizedSlate';
 const DEFAULT_NODE = 'paragraph';
 const MAX_LENGTH = 5;
+const MAX_TAB_COUNT = 3;
 const isBoldHotkey = isKeyHotkey('mod+b');
 const isItalicHotkey = isKeyHotkey('mod+i');
 const isUnderlinedHotkey = isKeyHotkey('mod+u');
@@ -33,6 +34,7 @@ export {
   DEFAULT_STORAGE_KEY,
   DEFAULT_NODE,
   MAX_LENGTH,
+  MAX_TAB_COUNT,
   isBoldHotkey,
   isItalicHotkey,
   isUnderlinedHotkey,

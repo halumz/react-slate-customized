@@ -35,6 +35,7 @@ export default class extends Component {
             {children}
           </blockquote>
         );
+
       case 'bulleted-list':
         return (
           <ul {...attributes} style={style}>
@@ -54,7 +55,11 @@ export default class extends Component {
           </h2>
         );
       // case 'list-item':
-      //   return <li {...attributes} style={style}>{children}</li>;
+      //   return (
+      //     <li {...attributes} style={style}>
+      //       {children}
+      //     </li>
+      //   );
       case 'ul_list':
         return (
           <ul {...attributes} style={style}>
@@ -80,18 +85,19 @@ export default class extends Component {
           </li>
         );
 
-      case 'numbered-list':
-        return (
-          <ol {...attributes} style={style}>
-            {children}
-          </ol>
-        );
       case 'image': {
         const src = node.data.get('src');
         return (
           <Image src={src} selected={isFocused} {...attributes} style={style} />
         );
       }
+      case 'numbered-list':
+        console.log('numbered');
+        return (
+          <ol {...attributes} style={style}>
+            {children}
+          </ol>
+        );
       default:
         return <div style={style}>{children}</div>;
     }
